@@ -1,4 +1,3 @@
-```markdown
 # Taxonomy Comparison Tool
 
 **Compare species lists across GBIF, NCBI, and local databases**
@@ -170,4 +169,4 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 ## Contact
 For questions or feedback, contact [Nicola Vogel](mailto:nicola.vogel@sund.ku.dk).
-```
+
