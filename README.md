@@ -35,8 +35,8 @@ The tool generates detailed reports, including overlaps, unique entries, and int
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/nicolaavogel/taxon_comparisons.git
+cd taxon_comparison
 ```
 
 ### 2. Set Up Conda Environment
