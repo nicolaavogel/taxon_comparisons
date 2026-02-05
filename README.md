@@ -47,7 +47,7 @@ conda activate taxon_compare
 ```
 
 ### 3. Install Dependencies
-If not using conda please ensure python3 and the python packages needed in this script are installed.
+If not using conda please ensure python3 and the python packages needed in this script are installed. They are listed in the `taxon_compare.yml` file.
 
 ---
 
@@ -77,8 +77,8 @@ res = main(
 ```
 
 ### Required Files
-- `acc2tax.tsv`: Accession to taxonomy file for your local database. Must include 4 columns `accession, accession.version, taxid, db_id` and be tab seperated. 
-	e.g. ```
+- `acc2tax.tsv`: Accession to taxonomy file for your local database. Must include 4 columns accession, accession.version, taxid, db_id and be tab seperated. 
+```
 	accession	accession.version	taxid	db_id
 	XM_032804418	XM_032804418.1	106734	core_nt
 	KR677567	KR677567.1	288806	core_nt
@@ -89,7 +89,7 @@ res = main(
 	XM_007924952	XM_007924952.1	383855	core_nt
 	XM_009880046	XM_009880046.1	50402	core_nt
 	MN403818	MN403818.1	2651588	core_nt
-	```
+```
 - `nodes.dmp` and `names.dmp`: NCBI taxonomy dump files. 
 
 ---
@@ -101,9 +101,9 @@ res = main(
 - `NCBI_API_KEY`: (Optional) Your NCBI API key for higher rate limits.
 
 ### Conda Environment
-The `environment.yml` file includes all required dependencies:
+The `taxon_compare.yml` file includes all required dependencies:
 ```yaml
-name: taxonomy-comparison
+name: taxon_compare
 channels:
   - conda-forge
   - bioconda
