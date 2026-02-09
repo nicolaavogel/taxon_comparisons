@@ -1,0 +1,1323 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Hominidae FAMILY membership</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 18px; }
+    input { padding: 8px; width: 520px; }
+    table { border-collapse: collapse; margin-top: 12px; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { cursor: pointer; background: #f6f6f6; position: sticky; top: 0; }
+    tr:nth-child(even):not(.badge-gbif-only):not(.badge-strong):not(.badge-all):not(.badge-warn):not(.badge-only) {
+      background: #fafafa;
+    }
+    
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* row highlights */
+    .badge-gbif-only { background: #ffecec !important; }
+    .badge-strong    { background: #dff6df !important; }
+    .badge-all       { background: #eefbee !important; }
+    .badge-warn      { background: #fff7cc !important; }
+    .badge-only      { background: #f2f2f2 !important; }
+  </style>
+</head>
+<body>
+  <h2>Hominidae FAMILY — membership (GBIF / NCBI / Local DBs)</h2>
+  <div>
+    <input id="q" placeholder="Search..." onkeyup="filterRows()"/>
+    <span id="count"></span>
+  </div>
+
+  <table id="tbl">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">GBIF</th>
+        <th onclick="sortTable(2)">NCBI</th>
+        <th onclick="sortTable(3)">core_nt</th>
+        <th onclick="sortTable(4)">refseq_mito</th>
+        <th onclick="sortTable(5)">wgs_eukaryota</th>
+        <th onclick="sortTable(6)">Local DBs</th>
+        <th onclick="sortTable(7)">Bucket (GBIF/NCBI/Any Local)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="badge-gbif-only">
+        <td>Ankarapithecus meteai</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ardipithecus kadabba</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus afarensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus africanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus anamensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus bahrelghazali</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus deyiremeda</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus garhi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus ramidus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus robustus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Australopithecus sediba</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Danuvius guggenmosi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus chinjiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus crusafonti</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus fontani</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus giganteus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus indicus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus mogharensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Dryopithecus punjabicus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Gigantopithecus bilaspurensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Gigantopithecus blacki</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Gorilla beringei</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Gorilla beringei beringei</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Gorilla beringei graueri</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Gorilla gorilla</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Gorilla gorilla diehli</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Gorilla gorilla gorilla</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Gorilla gorilla uellensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Gorilla mayema</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Graecopithecus freybergi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Hispanopithecus laietanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Hominidae sp.</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo afer</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo americanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo antecessor</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo asiaticus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo bodoensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo cepranensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo denisova</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo erectus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo ergaster</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo europaeus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo floresiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo gautengensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo georgicus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo habilis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Homo heidelbergensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo helmei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo longi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo luzonensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo naledi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo neanderthalensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo njarasensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo rhodesiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo rudolfensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Homo sapiens</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens afer</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens americanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens asiaticus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens cognatus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Homo sapiens environmental sample</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens europaeus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens ferus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens idaltu</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens monstrosus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="">
+        <td>Homo sapiens neanderthalensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo sapiens sapiens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="">
+        <td>Homo sapiens subsp. 'Denisova'</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Homo sapiens x Pan troglodytes tetraploid cell line</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Homo sp.</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo stultae</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Homo tsaichangensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Kenyanthropus platyops</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Kenyapithecus wickeri</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Khoratpithecus ayeyarwadyensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Khoratpithecus chiangmuanensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Khoratpithecus piriyai</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Langsonia liquidens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Limnopithecus evansi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Limnopithecus legetet</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Lufengpithecus chiangmuanensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Lufengpithecus keiyuanensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Lufengpithecus lufengensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Micropithecus clarki</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Micropithecus leakeyorum</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Micropithecus songhorensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Morotopithecus bishopi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Nakalipithecus nakayamai</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Orrorin tugenensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Otavipithecus namibiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ouranopithecus macedoniensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ouranopithecus turkae</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Palaeosimia rugosidens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Pan paniscus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Pan troglodytes</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pan troglodytes ellioti</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pan troglodytes schweinfurthii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pan troglodytes troglodytes</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pan troglodytes verus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Pan troglodytes verus x troglodytes</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Paranthropus boisei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Pierolapithecus catalaunicus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Platodontopithecus jianghuaiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Pongo abelii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pongo abelii x pygmaeus</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Pongo borneo</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Pongo hooijeri</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Pongo pygmaeus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pongo pygmaeus morio</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pongo pygmaeus pygmaeus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pongo pygmaeus wurmbii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pongo sp.</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Pongo tapanuliensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Praeanthropus garhi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Proconsul hamiltoni</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ramapithecus brevirostris</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Rudapithecus hungaricus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Rukwapithecus fleaglei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Sahelanthropus tchadensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Sivapithecus africanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Sivapithecus alpani</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Sivapithecus parvada</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Sivapithecus simsoni</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Udabnopithecus garedziensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+    </tbody>
+  </table>
+
+<script>
+function filterRows() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const tbl = document.getElementById("tbl").getElementsByTagName("tbody")[0];
+  const rows = tbl.getElementsByTagName("tr");
+  let shown = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const txt = rows[i].innerText.toLowerCase();
+    const ok = txt.indexOf(q) > -1;
+    rows[i].style.display = ok ? "" : "none";
+    if (ok) shown++;
+  }
+  document.getElementById("count").innerText = "Showing " + shown + " rows";
+}
+filterRows();
+
+function sortTable(col) {
+  const table = document.getElementById("tbl");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+  const asc = table.getAttribute("data-sort-col") != col || table.getAttribute("data-sort-dir") != "asc";
+
+  rows.sort((a,b) => {
+    const A = a.cells[col].innerText;
+    const B = b.cells[col].innerText;
+    return asc ? A.localeCompare(B) : B.localeCompare(A);
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+  table.setAttribute("data-sort-col", col);
+  table.setAttribute("data-sort-dir", asc ? "asc" : "desc");
+}
+</script>
+</body></html>

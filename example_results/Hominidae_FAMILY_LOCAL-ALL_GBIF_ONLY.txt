@@ -1,0 +1,94 @@
+ankarapithecus meteai
+ardipithecus kadabba
+australopithecus afarensis
+australopithecus africanus
+australopithecus anamensis
+australopithecus bahrelghazali
+australopithecus deyiremeda
+australopithecus garhi
+australopithecus ramidus
+australopithecus robustus
+australopithecus sediba
+danuvius guggenmosi
+dryopithecus chinjiensis
+dryopithecus crusafonti
+dryopithecus fontani
+dryopithecus giganteus
+dryopithecus indicus
+dryopithecus mogharensis
+dryopithecus punjabicus
+gigantopithecus bilaspurensis
+gigantopithecus blacki
+gorilla mayema
+graecopithecus freybergi
+hispanopithecus laietanus
+homo afer
+homo americanus
+homo antecessor
+homo asiaticus
+homo bodoensis
+homo cepranensis
+homo denisova
+homo erectus
+homo ergaster
+homo europaeus
+homo floresiensis
+homo gautengensis
+homo georgicus
+homo habilis
+homo helmei
+homo longi
+homo luzonensis
+homo naledi
+homo neanderthalensis
+homo njarasensis
+homo rhodesiensis
+homo rudolfensis
+homo sapiens afer
+homo sapiens americanus
+homo sapiens asiaticus
+homo sapiens cognatus
+homo sapiens europaeus
+homo sapiens ferus
+homo sapiens idaltu
+homo sapiens monstrosus
+homo sapiens sapiens
+homo stultae
+homo tsaichangensis
+kenyanthropus platyops
+kenyapithecus wickeri
+khoratpithecus ayeyarwadyensis
+khoratpithecus chiangmuanensis
+khoratpithecus piriyai
+langsonia liquidens
+limnopithecus evansi
+limnopithecus legetet
+lufengpithecus chiangmuanensis
+lufengpithecus keiyuanensis
+lufengpithecus lufengensis
+micropithecus clarki
+micropithecus leakeyorum
+micropithecus songhorensis
+morotopithecus bishopi
+nakalipithecus nakayamai
+orrorin tugenensis
+otavipithecus namibiensis
+ouranopithecus macedoniensis
+ouranopithecus turkae
+palaeosimia rugosidens
+paranthropus boisei
+pierolapithecus catalaunicus
+platodontopithecus jianghuaiensis
+pongo borneo
+pongo hooijeri
+praeanthropus garhi
+proconsul hamiltoni
+ramapithecus brevirostris
+rudapithecus hungaricus
+rukwapithecus fleaglei
+sahelanthropus tchadensis
+sivapithecus africanus
+sivapithecus alpani
+sivapithecus parvada
+sivapithecus simsoni
+udabnopithecus garedziensis

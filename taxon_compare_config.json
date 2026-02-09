@@ -1,0 +1,15 @@
+{
+  "taxon": "Betula",
+  "taxon_rank": "GENUS",
+  "acc2tax": "all_acc2tax.with_dbid.gz",
+  "nodes": "/datasets/caeg_dataset/references/ncbi/20250530/taxonomy/ncbi/taxdump/nodes.dmp",
+  "names": "/datasets/caeg_dataset/references/ncbi/20250530/taxonomy/ncbi/taxdump/names.dmp",
+  "email": "n.alexandra.vogel@gmail.com",
+  "api_key": null,
+  "kingdom": "Plantae",
+  "count_by": "versioned",
+  "pretty": true,
+  "include_subspecies": true,
+  "out_dir": ".",
+  "html_out": "Betula_GENUS_membership_by_dbid.html"
+}

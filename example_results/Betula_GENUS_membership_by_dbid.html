@@ -1,0 +1,2493 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Betula GENUS membership</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 18px; }
+    input { padding: 8px; width: 520px; }
+    table { border-collapse: collapse; margin-top: 12px; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { cursor: pointer; background: #f6f6f6; position: sticky; top: 0; }
+    tr:nth-child(even):not(.badge-gbif-only):not(.badge-strong):not(.badge-all):not(.badge-warn):not(.badge-only) {
+      background: #fafafa;
+    }
+    
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* row highlights */
+    .badge-gbif-only { background: #ffecec !important; }
+    .badge-strong    { background: #dff6df !important; }
+    .badge-all       { background: #eefbee !important; }
+    .badge-warn      { background: #fff7cc !important; }
+    .badge-only      { background: #f2f2f2 !important; }
+  </style>
+</head>
+<body>
+  <h2>Betula GENUS — membership (GBIF / NCBI / Local DBs)</h2>
+  <div>
+    <input id="q" placeholder="Search..." onkeyup="filterRows()"/>
+    <span id="count"></span>
+  </div>
+
+  <table id="tbl">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">GBIF</th>
+        <th onclick="sortTable(2)">NCBI</th>
+        <th onclick="sortTable(3)">core_nt</th>
+        <th onclick="sortTable(4)">phylo_norway</th>
+        <th onclick="sortTable(5)">refseq_plastid</th>
+        <th onclick="sortTable(6)">Local DBs</th>
+        <th onclick="sortTable(7)">Bucket (GBIF/NCBI/Any Local)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="badge-gbif-only">
+        <td>Betula aequalis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula alaskana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula alleghaniensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula alnoides</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula alnus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula alnus-incana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula alnus-rugosa</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula alpina</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula angustifolia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula apoiensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula ashburneri</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula aurata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula austrosinensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula avatshensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula baschkirica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula basiserrata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula beatriciana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula bendirei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula bhojpatra</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula bomiensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula borysthenica</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula bottnica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula browicziana</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula bryani</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula buggsii</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="">
+        <td>Betula caerulea</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_NCBI</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula caerulea caerulea</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula caerulea cunninghamii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula calcicola</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula celtiberica</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula chichibuensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula chinensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula cordifolia</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula coriaceifolia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula corylifolia</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula coryloides</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula costata</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula crenata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula cylindrostachya</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dahurica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dauurica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula davurica</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dayana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula delavayi</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula deltoides</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dosmannii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dugleana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dulcis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula dutillyi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula eastwoodae</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula eastwoodiae</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula elliptica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula ermanii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula ethnensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula excelsa</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula fairii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula falcata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula fallax</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula fargesii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula ferganensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula finitima</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula fischeri</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula florissanti</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula friesii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula frutescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula fruticosa</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula fruticosa fruticosa</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula fruticosa montana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula fusca</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula glaebosa</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula glandulosa</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula globispica</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="">
+        <td>Betula gmelinii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_NCBI</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula gracilis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula grandifolia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula grossa</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula gynoterminalis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula hainanensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula halophila</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula heptopotamica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula hesterna</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula heterodonta</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula heteromorpha</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula honanensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula hornei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-all">
+        <td>Betula humilis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, phylo_norway</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula humilis x pendula</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula humilis x pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula hybrida</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula iddingsi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula incana</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula incisa</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula intermedia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula jackii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula jarmolenkoana</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula jiulungensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula karagandensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula kenaica</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula kirghisorum</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula klokovii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula klokovii x Betula pendula</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula koehnei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula kotulae</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula kweichowensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula kweichowensis fansipanensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula kweichowensis kweichowensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula kweichowensis subsp. fansipanensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula largei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula lenta</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula litvinovii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula luminifera</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula macclintockia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula macrophylla</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula maximowicziana</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula maximowitschii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula mcallisteri</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula medwedewii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula medwediewii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula megrelica</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula michauxii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula michauxii × Betula pumila var. pumila</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula microphylla</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula middendorffii</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula minor</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula murrayana</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula nana</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, phylo_norway, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="">
+        <td>Betula nana subsp. exilis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, phylo_norway</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula nana subsp. nana</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula nana subsp. tundrarum</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nana x pendula</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nana x pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nana × pendula</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nana × pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nana × pubescens subsp. czerepanovii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nana × pubescens subsp. pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nanaeformis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula nanoides</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula neoalaskana</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula nigra</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula niijimai</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula obscura</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula occidentalis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="">
+        <td>Betula ovalifolia</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula ovalifolia x Betula ermanii</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula oxydathifolia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula oycowiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula pamirica</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula papyrifera</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula paramushirensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula parcedentata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula pendula</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pendula mandshurica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pendula pendula</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula pendula subsp. mandshurica</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula pendula subsp. pendula</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula pendula subsp. szechuanica</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pendula szechuanica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pendula x pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pendula × pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula perantiqua</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula piperi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="">
+        <td>Betula platyphylla</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula plettkei</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pontica</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula populifolia</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula potamophila</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula potaninii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula prenigra</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula prisca</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula procurva</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula psammophila</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pseudofontinalis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula pubescens</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, phylo_norway, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pubescens pubescens</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula pubescens subsp. carpatica</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula pubescens x Betula nana</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pulchella</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula pumila</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pumila glandulifera</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pumila pumila</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula purpusii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula pyrifolia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula raddeana</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula raymundii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula reticulata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula rezniczenkoana</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula rosendahlii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula rotundifolia</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula saksarensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula sandbergii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula sandbergii fernaldii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula sandbergii sandbergii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula sargentii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula saviczii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula schimperi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula schmidtii</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula sect</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula series</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula skvorsovii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula skvortsovii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula sp.</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula sp. CVM-2007</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula sp. HB-2018</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula sp. RP-2014</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula sp. YM1486</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula sp. YM4252</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula sp. YM65</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula sp. YMI1</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula stevensonii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula sunanensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula thor</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula tianschanica</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula touinia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula truncata</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula turkestanica</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula uber</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula uliginosa</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula urticifolia</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula utahensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Betula utilis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_plastid</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula utilis albosinensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula utilis jacquemontii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula utilis occidentalis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula utilis subsp. albosinensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula utilis subsp. jacquemontii</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula utilis subsp. occidentalis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula utilis utilis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula vogdesii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula vologdensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula winteri</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula wuyiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula x atrata</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Betula x aurata</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula x caerulea</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula x obscura</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula x purpusii</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula x sandbergii</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Betula x utahensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula zabelii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula zimpelii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Betula zinserlingii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+    </tbody>
+  </table>
+
+<script>
+function filterRows() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const tbl = document.getElementById("tbl").getElementsByTagName("tbody")[0];
+  const rows = tbl.getElementsByTagName("tr");
+  let shown = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const txt = rows[i].innerText.toLowerCase();
+    const ok = txt.indexOf(q) > -1;
+    rows[i].style.display = ok ? "" : "none";
+    if (ok) shown++;
+  }
+  document.getElementById("count").innerText = "Showing " + shown + " rows";
+}
+filterRows();
+
+function sortTable(col) {
+  const table = document.getElementById("tbl");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+  const asc = table.getAttribute("data-sort-col") != col || table.getAttribute("data-sort-dir") != "asc";
+
+  rows.sort((a,b) => {
+    const A = a.cells[col].innerText;
+    const B = b.cells[col].innerText;
+    return asc ? A.localeCompare(B) : B.localeCompare(A);
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+  table.setAttribute("data-sort-col", col);
+  table.setAttribute("data-sort-dir", asc ? "asc" : "desc");
+}
+</script>
+</body></html>

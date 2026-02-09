@@ -1,0 +1,143 @@
+betula aequalis
+betula alaskana
+betula alnus
+betula alnus-incana
+betula alnus-rugosa
+betula alpina
+betula angustifolia
+betula aurata
+betula avatshensis
+betula baschkirica
+betula basiserrata
+betula beatriciana
+betula bendirei
+betula bhojpatra
+betula bottnica
+betula bryani
+betula caerulea caerulea
+betula caerulea cunninghamii
+betula coriaceifolia
+betula coryloides
+betula crenata
+betula dahurica
+betula dauurica
+betula dayana
+betula deltoides
+betula dosmannii
+betula dugleana
+betula dulcis
+betula dutillyi
+betula eastwoodae
+betula eastwoodiae
+betula elliptica
+betula ethnensis
+betula excelsa
+betula fairii
+betula falcata
+betula fallax
+betula ferganensis
+betula finitima
+betula fischeri
+betula florissanti
+betula friesii
+betula frutescens
+betula fruticosa fruticosa
+betula fruticosa montana
+betula fusca
+betula glaebosa
+betula gracilis
+betula grandifolia
+betula gynoterminalis
+betula heptopotamica
+betula hesterna
+betula heterodonta
+betula heteromorpha
+betula honanensis
+betula hornei
+betula humilis x pendula
+betula humilis x pubescens
+betula hybrida
+betula iddingsi
+betula incana
+betula incisa
+betula intermedia
+betula jackii
+betula jiulungensis
+betula karagandensis
+betula koehnei
+betula kweichowensis fansipanensis
+betula kweichowensis kweichowensis
+betula largei
+betula litvinovii
+betula macclintockia
+betula macrophylla
+betula maximowitschii
+betula medwedewii
+betula michauxii × betula pumila var. pumila
+betula nana x pendula
+betula nana x pubescens
+betula nana × pendula
+betula nana × pubescens
+betula nana × pubescens subsp. czerepanovii
+betula nana × pubescens subsp. pubescens
+betula nanaeformis
+betula nanoides
+betula niijimai
+betula obscura
+betula oxydathifolia
+betula oycowiensis
+betula paramushirensis
+betula parcedentata
+betula pendula mandshurica
+betula pendula pendula
+betula pendula szechuanica
+betula pendula x pubescens
+betula pendula × pubescens
+betula perantiqua
+betula piperi
+betula plettkei
+betula pontica
+betula potamophila
+betula prenigra
+betula prisca
+betula psammophila
+betula pseudofontinalis
+betula pubescens pubescens
+betula pulchella
+betula pumila glandulifera
+betula pumila pumila
+betula purpusii
+betula pyrifolia
+betula raymundii
+betula reticulata
+betula rosendahlii
+betula saksarensis
+betula sandbergii
+betula sandbergii fernaldii
+betula sandbergii sandbergii
+betula sargentii
+betula saviczii
+betula schimperi
+betula sect
+betula series
+betula skvorsovii
+betula skvortsovii
+betula stevensonii
+betula sunanensis
+betula thor
+betula touinia
+betula truncata
+betula uliginosa
+betula urticifolia
+betula utahensis
+betula utilis albosinensis
+betula utilis jacquemontii
+betula utilis occidentalis
+betula utilis utilis
+betula vogdesii
+betula vologdensis
+betula winteri
+betula wuyiensis
+betula zabelii
+betula zimpelii
+betula zinserlingii

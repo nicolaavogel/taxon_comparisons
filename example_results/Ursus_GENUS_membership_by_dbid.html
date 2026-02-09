@@ -1,0 +1,913 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Ursus GENUS membership</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 18px; }
+    input { padding: 8px; width: 520px; }
+    table { border-collapse: collapse; margin-top: 12px; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { cursor: pointer; background: #f6f6f6; position: sticky; top: 0; }
+    tr:nth-child(even):not(.badge-gbif-only):not(.badge-strong):not(.badge-all):not(.badge-warn):not(.badge-only) {
+      background: #fafafa;
+    }
+    
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* row highlights */
+    .badge-gbif-only { background: #ffecec !important; }
+    .badge-strong    { background: #dff6df !important; }
+    .badge-all       { background: #eefbee !important; }
+    .badge-warn      { background: #fff7cc !important; }
+    .badge-only      { background: #f2f2f2 !important; }
+  </style>
+</head>
+<body>
+  <h2>Ursus GENUS — membership (GBIF / NCBI / Local DBs)</h2>
+  <div>
+    <input id="q" placeholder="Search..." onkeyup="filterRows()"/>
+    <span id="count"></span>
+  </div>
+
+  <table id="tbl">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Name</th>
+        <th onclick="sortTable(1)">GBIF</th>
+        <th onclick="sortTable(2)">NCBI</th>
+        <th onclick="sortTable(3)">core_nt</th>
+        <th onclick="sortTable(4)">refseq_mito</th>
+        <th onclick="sortTable(5)">wgs_eukaryota</th>
+        <th onclick="sortTable(6)">Local DBs</th>
+        <th onclick="sortTable(7)">Bucket (GBIF/NCBI/Any Local)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="badge-gbif-only">
+        <td>Euarctos optimus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Thalassarctos spitzbergensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus abstrusus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus americanus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus americanus altifrontalis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus amblyceps</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus americanus americanus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus californiensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus americanus carlottae</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus americanus cinnamomum</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus emmonsii</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus eremicus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus floridanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus hamiltoni</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus americanus kermodei</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus luteolus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus machetes</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus perniger</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus americanus pugnax</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus americanus vancouveri</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus arctos</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">core_nt, refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos alascensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus arctos arctos</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos beringianus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="">
+        <td>Ursus arctos californicus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_NCBI</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos collaris</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos crowtheri</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos dalli</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos gyas</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus arctos horribilis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus arctos isabellinus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos lasiotus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Ursus arctos marsicanus</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus arctos middendorffi</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus arctos pruinosus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos sitkensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arctos stikeenensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus arctos syriacus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus arvernensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus dalli</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus deningeri</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus dentrificius</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus environmental sample</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus etruscus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus euryspilus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus gedrosianus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus ingressus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus inniutus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus isabellinus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus kanivetz</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus kokeni</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus kudarensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus kudarensis kudarensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus kudarensis praekudarensis</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus kwakiuti</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus maritimus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td class="mono">refseq_mito, wgs_eukaryota</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus maritimus tyrannus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus middendorffi</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus minimus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus novaehollandiae</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus orgildoies</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus perturans</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus praemalayanus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus priscus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus pruinosus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus rossicus</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus sitkensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Ursus sp.</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus sp. Shennongjia white bear</td>
+        <td></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>NCBI_LOCAL</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus spec</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus spelaeus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-only">
+        <td>Ursus spelaeus eremus</td>
+        <td></td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>NCBI_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus stikeenensis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus tahitanicus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus thibetanus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus thibetanus formosanus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus thibetanus gedrosianus</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus thibetanus japonicus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-warn">
+        <td>Ursus thibetanus laniger</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td class="mono">core_nt</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus thibetanus mupinensis</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus thibetanus thibetanus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-strong">
+        <td>Ursus thibetanus ussuricus</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td></td>
+        <td class="mono">core_nt, refseq_mito</td>
+        <td>ALL_3</td>
+      </tr>
+      <tr class="badge-gbif-only">
+        <td>Ursus vitabilis</td>
+        <td>✔</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="mono"></td>
+        <td>GBIF_ONLY</td>
+      </tr>
+    </tbody>
+  </table>
+
+<script>
+function filterRows() {
+  const q = document.getElementById("q").value.toLowerCase();
+  const tbl = document.getElementById("tbl").getElementsByTagName("tbody")[0];
+  const rows = tbl.getElementsByTagName("tr");
+  let shown = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const txt = rows[i].innerText.toLowerCase();
+    const ok = txt.indexOf(q) > -1;
+    rows[i].style.display = ok ? "" : "none";
+    if (ok) shown++;
+  }
+  document.getElementById("count").innerText = "Showing " + shown + " rows";
+}
+filterRows();
+
+function sortTable(col) {
+  const table = document.getElementById("tbl");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.rows);
+  const asc = table.getAttribute("data-sort-col") != col || table.getAttribute("data-sort-dir") != "asc";
+
+  rows.sort((a,b) => {
+    const A = a.cells[col].innerText;
+    const B = b.cells[col].innerText;
+    return asc ? A.localeCompare(B) : B.localeCompare(A);
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+  table.setAttribute("data-sort-col", col);
+  table.setAttribute("data-sort-dir", asc ? "asc" : "desc");
+}
+</script>
+</body></html>
